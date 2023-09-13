@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  list-style: none;
 }
 
 :root {
@@ -14,6 +15,10 @@
 
 html{
     scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font-default);
 }
 
 header {
@@ -30,7 +35,7 @@ header {
 
 /* pseudo-elemento não existe enquanto nao tiver conteudo */
 header::before {
-  content: "";
+  content: '';
   background-image: url("../images/backdrop.png");
   background-size: cover;
   height: 100%;
@@ -42,19 +47,24 @@ header::before {
   z-index: -1;
 }
 
-h1 {
-  color: #fff;
-  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
-  font-size: 3rem;
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-title);
   font-weight: 700;
 }
 
+header h1 {
+  color: #FFF;
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+  font-size: 4rem;
+}
+
 span {
-  color: #8a95fe;
+  color:#8A95FE;
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
   font-size: 2rem;
-  font-family: var(--font-default);
 }
 
 .botao {
@@ -62,7 +72,7 @@ span {
   color: #fff;
   font-family: var(--font-default);
   /*o primeiro valor é referente ao Y: altura e o segundo ao X: largura*/
-  padding: 0.25rem 1rem;
+  padding: .25rem 1rem;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color 1s;
@@ -86,9 +96,67 @@ span {
 }
 
 #secao-apresentao div{
-    max-width: 70%;
+    display: flex;
     gap: 1rem;
     flex-direction: column;
     align-items: flex-start;
     max-width: 60%;
+}
+
+#secao-projetos {
+  height: 100vh;
+  background-color: #252739;
+}
+
+.card {
+  max-width: 280px;
+  height: 380px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover .card-content{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#secao-projetos ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.card-image-wrapper{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.card-content { 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  position: absolute;
+  top: 25%;
+  left: .5rem;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 1s, transform 1s;
+}
+
+.card h2 {
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+.card h3 {
+  color: #4628FF;
+}
+
+.card p {
+  color: #FFF;
 }
