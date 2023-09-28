@@ -51,3 +51,6 @@ function calcular(){
 
 //mostrar o preço
 
+
+
+

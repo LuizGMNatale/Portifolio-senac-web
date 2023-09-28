@@ -21,6 +21,53 @@ body{
     font-family: var(--font-default);
 }
 
+#menu-icon{
+    color: white;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    text-shadow: #000 2px 2px 2px;
+}
+
+#menu{
+  position: fixed;
+  background-color: #362b75;
+  height: 100vh;
+  padding: 3rem;
+  z-index: 9;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 1s;
+}
+
+#menu a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+#menu.open{
+  transform: translateX(0%);
+}
+
+.icon{
+  width: 24px;
+  height: 24px;
+}
+
+#menu li{
+  padding: 1rem;
+  border-radius: .5rem;
+  transition: background-color .5s;
+}
+
+#menu li:hover{
+  background-color: #252739;
+}
+
+
 header {
   display: flex;
   flex-direction: column;
@@ -61,7 +108,7 @@ header h1 {
   font-size: 4rem;
 }
 
-span {
+header span {
   color:#8A95FE;
   text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
   font-size: 2rem;
@@ -83,6 +130,7 @@ span {
 }
 
 #secao-apresentacao {
+  background-color: whitesmoke;
   display: flex;
   height: 50vh;
   padding: 6rem;
@@ -162,6 +210,7 @@ span {
 }
 
 #secao-orcamento{
+  background-color: whitesmoke;
     height: 100%;
     padding: 3rem;
 }
